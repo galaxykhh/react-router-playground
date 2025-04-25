@@ -1,13 +1,24 @@
+import { useNavigation } from "react-router";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+    return [
+        { title: "New React Router App" },
+        { name: "description", content: "Welcome to React Router!" },
+    ];
 }
 
 export default function Home() {
-  return <Welcome />;
+    const navigation = useNavigation();
+
+    return (
+        <div className="flex h-screen items-center justify-center">
+            <button
+                className="cursor-pointer rounded bg-amber-700 p-2"
+                onClick={() => {}}
+            >
+                Route to Posts
+            </button>
+        </div>
+    );
 }
