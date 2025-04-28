@@ -41,9 +41,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <div className="mt-14">{children}</div>
                 <ScrollRestoration />
                 <Scripts />
-                <footer className="flex h-24 items-center justify-center border-t bg-red-600">
-                    FOOTER
-                </footer>
             </body>
         </html>
     );
