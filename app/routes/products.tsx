@@ -7,8 +7,8 @@ import ProductGrid from "~/features/products/components/product-grid";
 
 export function meta({}: Route.MetaArgs) {
     return [
-        { title: "New React Router App" },
-        { name: "description", content: "Welcome to React Router!" },
+        { title: "Products" },
+        { name: "products", content: "description" },
     ];
 }
 

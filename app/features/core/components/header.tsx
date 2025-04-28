@@ -1,9 +1,11 @@
 export default function Header() {
     return (
-        <header className="fixed inset-x-0 top-0 z-1 flex h-14 items-center justify-center border-b bg-white px-4 shadow-sm">
-            <h1 className="text-md font-semibold">
-                React Router Playground (Store)
-            </h1>
+        <header className="fixed inset-x-0 top-0 z-1 flex w-full justify-center">
+            <div className="flex h-14 w-[600px] items-center justify-center border-b bg-white">
+                <h1 className="text-md font-semibold">
+                    React Router Playground (Store)
+                </h1>
+            </div>
         </header>
     );
 }
