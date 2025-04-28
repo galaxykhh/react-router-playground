@@ -11,8 +11,8 @@ export default function ProductList({ products }: ProductListProps) {
         <div className="scrollbar-hide overflow-x-auto bg-orange-100 p-4">
             <ul className="flex min-w-max gap-4">
                 {products.map((product: Product) => (
-                    <Link to={`/products/${product.id}`}>
-                        <ProductListItem key={product.id} product={product} />
+                    <Link key={product.id} to={`/products/${product.id}`}>
+                        <ProductListItem product={product} />
                     </Link>
                 ))}
             </ul>
