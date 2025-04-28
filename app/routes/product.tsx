@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router";
 import type { Route } from "./+types/product";
-import { getProduct, type Product } from "~/features/products/api/get-products";
+import { getProductById, type ProductEntity } from "~/features/products/api";
 import Rating from "~/features/core/components/rating";
 import Main from "~/features/core/components/main";
 
@@ -21,11 +21,11 @@ export async function loader({ params }: Route.LoaderArgs) {
         throw new Response("Not Found", { status: 404 });
     }
 
-    return getProduct(Number(params.id));
+    return getProductById(Number(params.id));
 }
 
 export default function Post({ params }: Route.ComponentProps) {
-    const product = useLoaderData<Product>();
+    const product = useLoaderData<ProductEntity>();
 
     return (
         <Main>

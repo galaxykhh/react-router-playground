@@ -21,7 +21,7 @@ export default function Home() {
                 <Link to="products">Route to Products 📒</Link>
             </Button>
             <Button asChild>
-                <Link to="carts">Route to Carts 🛒</Link>
+                <Link to="carts/1">Route to Carts 🛒</Link>
             </Button>
         </Main>
     );

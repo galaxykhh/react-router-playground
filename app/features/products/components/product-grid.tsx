@@ -1,9 +1,9 @@
-import type { Product } from "~/features/products/api/get-products";
-import ProductGridItem from "./product-grid-item";
 import { Link } from "react-router";
+import type { ProductEntity } from "~/features/products/api";
+import { ProductGridItem } from "~/features/products/components";
 
 type ProductGridProps = {
-    products: Product[];
+    products: ProductEntity[];
 };
 
 export default function ProductGrid({ products }: ProductGridProps) {

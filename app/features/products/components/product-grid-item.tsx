@@ -1,7 +1,7 @@
-import type { Product } from "../api/get-products";
+import type { ProductEntity } from "../api";
 
 type ProductGridItemProps = {
-    product: Product;
+    product: ProductEntity;
 };
 
 export default function ProductGridItem({ product }: ProductGridItemProps) {

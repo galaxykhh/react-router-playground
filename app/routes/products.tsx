@@ -1,10 +1,8 @@
-import { getProducts } from "~/features/products/api/get-products";
-import type { Route } from "./+types/products";
 import { useLoaderData } from "react-router";
-import Section from "~/features/core/components/section";
-import ProductList from "~/features/products/components/product-list";
-import ProductGrid from "~/features/products/components/product-grid";
-import Main from "~/features/core/components/main";
+import type { Route } from "./+types/products";
+import { getProducts, type ProductEntity } from "~/features/products/api";
+import { ProductList, ProductGrid } from "~/features/products/components";
+import { Main, Section } from "~/features/core/components";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -18,7 +16,7 @@ export function loader(args: Route.LoaderArgs) {
 }
 
 export default function Posts() {
-    const products = useLoaderData();
+    const products = useLoaderData<ProductEntity[]>();
 
     return (
         <Main>

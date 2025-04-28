@@ -1,7 +1,7 @@
-import type { Product } from "~/features/products/api/get-products";
+import type { ProductEntity } from "~/features/products/api";
 
 type ProductListItemProps = {
-    product: Product;
+    product: ProductEntity;
 };
 
 export default function ProductListItem({ product }: ProductListItemProps) {
