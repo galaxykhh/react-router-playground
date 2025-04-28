@@ -14,7 +14,7 @@ export default function Home() {
         <div className="flex h-screen flex-col items-center justify-center gap-6">
             <h1 className="text-3xl">Home 🏠</h1>
             <Button asChild>
-                <Link to="posts">Route to Posts 📒</Link>
+                <Link to="products">Route to Products 📒</Link>
             </Button>
         </div>
     );

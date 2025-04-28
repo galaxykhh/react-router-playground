@@ -1,10 +1,10 @@
 import { useLoaderData } from "react-router";
-import type { Route } from "./+types/post";
+import type { Route } from "./+types/product";
 
-type Post ={
+type Post = {
     id: string;
     title: string;
-}
+};
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -14,11 +14,11 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader({ params }: Route.LoaderArgs) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
         setTimeout(() => {
             resolve({
                 id: params.id,
-                title: "Post Title"
+                title: "Post Title",
             });
         }, 1000);
     });
@@ -30,7 +30,9 @@ export default function Post({ params }: Route.ComponentProps) {
     return (
         <div>
             <h1>Post</h1>
-            <p>id: {post.id} title: {post.title}</p>
+            <p>
+                id: {post.id} title: {post.title}
+            </p>
         </div>
     );
 }
