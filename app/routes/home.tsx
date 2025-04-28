@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/home";
 import { Button } from "~/features/core/components/button";
+import Main from "~/features/core/components/main";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -11,11 +12,17 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
     return (
-        <div className="flex h-screen flex-col items-center justify-center gap-6">
+        <Main
+            headerShown
+            className="flex flex-col items-center justify-center gap-6"
+        >
             <h1 className="text-3xl">Home 🏠</h1>
             <Button asChild>
                 <Link to="products">Route to Products 📒</Link>
             </Button>
-        </div>
+            <Button asChild>
+                <Link to="carts">Route to Carts 🛒</Link>
+            </Button>
+        </Main>
     );
 }

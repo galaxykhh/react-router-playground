@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router";
 import type { Route } from "./+types/product";
 import { getProduct, type Product } from "~/features/products/api/get-products";
 import Rating from "~/features/core/components/rating";
+import Main from "~/features/core/components/main";
 
 type Post = {
     id: string;
@@ -27,7 +28,7 @@ export default function Post({ params }: Route.ComponentProps) {
     const product = useLoaderData<Product>();
 
     return (
-        <div>
+        <Main>
             <img src={product.image} alt={product.title} />
             <div className="px-3 py-2">
                 <p className="line-clamp-2 text-lg font-bold">
@@ -70,6 +71,6 @@ export default function Post({ params }: Route.ComponentProps) {
                     culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
-        </div>
+        </Main>
     );
 }

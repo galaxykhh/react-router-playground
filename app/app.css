@@ -19,6 +19,10 @@
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
     }
+
+    .h-without-header {
+        min-height: calc(100vh - 56px);
+    }
 }
 
 html,

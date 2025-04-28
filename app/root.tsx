@@ -36,9 +36,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Meta />
                 <Links />
             </head>
-            <body className="m-auto min-h-screen max-w-[600px]">
+            <body className="m-auto max-w-[600px]">
                 <Header />
-                <div className="mt-14">{children}</div>
+                {children}
                 <ScrollRestoration />
                 <Scripts />
             </body>
