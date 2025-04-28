@@ -1,5 +1,6 @@
-import { useNavigation } from "react-router";
+import { Link } from "react-router";
 import type { Route } from "./+types/home";
+import { Button } from "~/features/core/components/button";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -9,16 +10,12 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-    const navigation = useNavigation();
-
     return (
-        <div className="flex h-screen items-center justify-center">
-            <button
-                className="cursor-pointer rounded bg-amber-700 p-2"
-                onClick={() => {}}
-            >
-                Route to Posts
-            </button>
+        <div className="flex h-screen flex-col items-center justify-center gap-6">
+            <h1 className="text-3xl">Home 🏠</h1>
+            <Button asChild>
+                <Link to="posts">Route to Posts 📒</Link>
+            </Button>
         </div>
     );
 }

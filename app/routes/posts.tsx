@@ -9,7 +9,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Posts() {
     return (
-        <div>
+        <div className="flex h-screen flex-col items-center justify-center gap-6">
             <h1>Posts</h1>
             <p>This is a posts page.</p>
         </div>
