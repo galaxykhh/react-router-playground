@@ -3,6 +3,7 @@ import type { Route } from "./+types/products";
 import { getProducts, type ProductEntity } from "~/features/products/api";
 import { ProductList, ProductGrid } from "~/features/products/components";
 import { Main, Section } from "~/features/core/components";
+import { useCallback, useMemo } from "react";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -18,19 +19,43 @@ export function loader(args: Route.LoaderArgs) {
 export default function Posts() {
     const products = useLoaderData<ProductEntity[]>();
 
+    const sections = useMemo(
+        () => [
+            {
+                label: "LURE PRODUCTS",
+                products: products,
+            },
+            {
+                label: "BRAND NEW",
+                products: [...products].reverse(),
+            },
+            {
+                label: "TIME SALE",
+                products: products,
+            },
+        ],
+        [],
+    );
+
+    const renderProducts = useCallback((label: string) => {
+        if (label === "LURE PRODUCTS") {
+            return <ProductList products={products} />;
+        }
+
+        if (label === "BRAND NEW") {
+            return <ProductList products={[...products].reverse()} />;
+        }
+
+        return <ProductGrid products={products} />;
+    }, []);
+
     return (
         <Main>
-            <Section label="LURE PRODUCTS">
-                <ProductList products={products} />
-            </Section>
-
-            <Section label="BRAND NEW">
-                <ProductList products={[...products].reverse()} />
-            </Section>
-
-            <Section label="TIME SALE">
-                <ProductGrid products={products} />
-            </Section>
+            {sections.map((section) => (
+                <Section key={section.label} label={section.label}>
+                    {renderProducts(section.label)}
+                </Section>
+            ))}
         </Main>
     );
 }

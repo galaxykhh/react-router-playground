@@ -17,13 +17,15 @@ export function meta({}: Route.MetaArgs) {
     ];
 }
 
-export async function loader({ params }: Route.LoaderArgs) {
+export async function loader({
+    params,
+}: Route.LoaderArgs): Promise<CartViewType> {
     const cart = await getCartById(Number(params.id));
     const products = await Promise.all(
         cart.products.map((product) => getProductById(product.productId)),
     );
 
-    const viewData = {
+    return {
         ...cart,
         products: cart.products.map((product) => {
             const target = products.find((p) => p.id === product.productId);
@@ -38,8 +40,6 @@ export async function loader({ params }: Route.LoaderArgs) {
             };
         }),
     };
-
-    return viewData;
 }
 
 export default function Carts() {

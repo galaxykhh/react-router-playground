@@ -23,6 +23,9 @@ export default function Home() {
             <Button asChild>
                 <Link to="carts/1">Route to Carts 🛒</Link>
             </Button>
+            <Button asChild>
+                <Link to="city">Route to City 🌆</Link>
+            </Button>
         </Main>
     );
 }

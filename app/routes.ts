@@ -5,4 +5,5 @@ export default [
     route("products", "routes/products.tsx"),
     route("products/:id", "routes/product.tsx"),
     route("carts/:id", "routes/carts.tsx"),
+    route("city", "routes/city.tsx"),
 ] satisfies RouteConfig;
